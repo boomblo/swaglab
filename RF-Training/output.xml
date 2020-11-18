@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.9.0 on win32)" generated="20201118 21:50:46.019" rpa="false">
+<suite id="s1" name="Swaglabstesti" source="C:\Users\Otso\RF-Training\swaglabstesti.robot">
+<test id="s1-t1" name="Ostotapahtuma">
+<kw name="Prepare Browser">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>executable_path=${DRIVER}</arg>
+</arguments>
+<msg timestamp="20201118 21:50:46.149" level="INFO">Opening browser 'Chrome' to base url 'https://www.saucedemo.com/'.</msg>
+<status status="PASS" starttime="20201118 21:50:46.149" endtime="20201118 21:50:49.514"></status>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" starttime="20201118 21:50:49.514" endtime="20201118 21:50:49.514"></status>
+</kw>
+<status status="PASS" starttime="20201118 21:50:46.149" endtime="20201118 21:50:49.514"></status>
+</kw>
+<kw name="Kirjaudu">
+<arguments>
+<arg>standard_user</arg>
+<arg>secret_sauce</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>id=user-name</arg>
+</arguments>
+<status status="PASS" starttime="20201118 21:50:49.515" endtime="20201118 21:50:49.522"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=user-name</arg>
+<arg>${username}</arg>
+</arguments>
+<msg timestamp="20201118 21:50:49.523" level="INFO">Typing text 'standard_user' into text field 'id=user-name'.</msg>
+<status status="PASS" starttime="20201118 21:50:49.522" endtime="20201118 21:50:49.572"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=password</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20201118 21:50:49.572" level="INFO">Typing text 'secret_sauce' into text field 'id=password'.</msg>
+<status status="PASS" starttime="20201118 21:50:49.572" endtime="20201118 21:50:49.618"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>id=login-button</arg>
+</arguments>
+<msg timestamp="20201118 21:50:49.618" level="INFO">Clicking element 'id=login-button'.</msg>
+<status status="PASS" starttime="20201118 21:50:49.618" endtime="20201118 21:50:51.128"></status>
+</kw>
+<kw name="Wait Until Page Contains" library="SeleniumLibrary">
+<doc>Waits until ``text`` appears on the current page.</doc>
+<arguments>
+<arg>Products</arg>
+</arguments>
+<status status="PASS" starttime="20201118 21:50:51.128" endtime="20201118 21:50:51.136"></status>
+</kw>
+<status status="PASS" starttime="20201118 21:50:49.514" endtime="20201118 21:50:51.136"></status>
+</kw>
+<kw name="Tuote">
+<arguments>
+<arg>Jacket</arg>
+</arguments>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//div[@class='inventory_item' and contains(.,'Jacket')]//button</arg>
+</arguments>
+<status status="PASS" starttime="20201118 21:50:51.137" endtime="20201118 21:50:51.144"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@class='inventory_item' and contains(.,'${product}')]//button</arg>
+</arguments>
+<msg timestamp="20201118 21:50:51.144" level="INFO">Clicking element 'xpath=//div[@class='inventory_item' and contains(.,'Jacket')]//button'.</msg>
+<status status="PASS" starttime="20201118 21:50:51.144" endtime="20201118 21:50:51.166"></status>
+</kw>
+<status status="PASS" starttime="20201118 21:50:51.136" endtime="20201118 21:50:51.166"></status>
+</kw>
+<kw name="Ostoskori">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//div[@id='shopping_cart_container']//a</arg>
+</arguments>
+<status status="PASS" starttime="20201118 21:50:51.167" endtime="20201118 21:50:51.174"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@id='shopping_cart_container']//a</arg>
+</arguments>
+<msg timestamp="20201118 21:50:51.174" level="INFO">Clicking element 'xpath=//div[@id='shopping_cart_container']//a'.</msg>
+<status status="PASS" starttime="20201118 21:50:51.174" endtime="20201118 21:50:51.245"></status>
+</kw>
+<status status="PASS" starttime="20201118 21:50:51.167" endtime="20201118 21:50:51.246"></status>
+</kw>
+<kw name="Checkout">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//div[@id='cart_contents_container']//a[contains(.,'CHECKOUT')]</arg>
+</arguments>
+<status status="PASS" starttime="20201118 21:50:51.246" endtime="20201118 21:50:51.253"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@id='cart_contents_container']//a[contains(.,'CHECKOUT')]</arg>
+</arguments>
+<msg timestamp="20201118 21:50:51.253" level="INFO">Clicking element 'xpath=//div[@id='cart_contents_container']//a[contains(.,'CHECKOUT')]'.</msg>
+<status status="PASS" starttime="20201118 21:50:51.253" endtime="20201118 21:50:51.331"></status>
+</kw>
+<status status="PASS" starttime="20201118 21:50:51.246" endtime="20201118 21:50:51.331"></status>
+</kw>
+<kw name="Tiedot">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>id=first-name</arg>
+</arguments>
+<status status="PASS" starttime="20201118 21:50:51.332" endtime="20201118 21:50:51.339"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=first-name</arg>
+<arg>Marko</arg>
+</arguments>
+<msg timestamp="20201118 21:50:51.339" level="INFO">Typing text 'Marko' into text field 'id=first-name'.</msg>
+<status status="PASS" starttime="20201118 21:50:51.339" endtime="20201118 21:50:51.382"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=last-name</arg>
+<arg>Melkone</arg>
+</arguments>
+<msg timestamp="20201118 21:50:51.383" level="INFO">Typing text 'Melkone' into text field 'id=last-name'.</msg>
+<status status="PASS" starttime="20201118 21:50:51.383" endtime="20201118 21:50:51.428"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=postal-code</arg>
+<arg>4200</arg>
+</arguments>
+<msg timestamp="20201118 21:50:51.428" level="INFO">Typing text '4200' into text field 'id=postal-code'.</msg>
+<status status="PASS" starttime="20201118 21:50:51.428" endtime="20201118 21:50:51.472"></status>
+</kw>
+<kw name="Submit Form" library="SeleniumLibrary">
+<doc>Submits a form identified by ``locator``.</doc>
+<msg timestamp="20201118 21:50:51.472" level="INFO">Submitting form 'None'.</msg>
+<status status="PASS" starttime="20201118 21:50:51.472" endtime="20201118 21:50:51.555"></status>
+</kw>
+<status status="PASS" starttime="20201118 21:50:51.332" endtime="20201118 21:50:51.555"></status>
+</kw>
+<kw name="Lopeta">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<arguments>
+<arg>xpath=//div[@id='checkout_summary_container']//a[contains(.,'FINISH')]</arg>
+</arguments>
+<status status="PASS" starttime="20201118 21:50:51.556" endtime="20201118 21:50:51.564"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath=//div[@id='checkout_summary_container']//a[contains(.,'FINISH')]</arg>
+</arguments>
+<msg timestamp="20201118 21:50:51.565" level="INFO">Clicking element 'xpath=//div[@id='checkout_summary_container']//a[contains(.,'FINISH')]'.</msg>
+<status status="PASS" starttime="20201118 21:50:51.564" endtime="20201118 21:50:51.669"></status>
+</kw>
+<status status="PASS" starttime="20201118 21:50:51.555" endtime="20201118 21:50:51.669"></status>
+</kw>
+<status status="PASS" starttime="20201118 21:50:46.149" endtime="20201118 21:50:51.669" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20201118 21:50:46.020" endtime="20201118 21:50:51.670"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Swaglabstesti">Swaglabstesti</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
